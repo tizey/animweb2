@@ -30,7 +30,7 @@ export default function Process() {
         <div className="liquid-glass rounded-full px-3.5 py-1 text-xs font-medium text-white font-mono">
           The Process
         </div>
-        <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading italic text-white tracking-tight leading-[0.9]">
+        <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-medium tracking-tighter text-white tracking-tight leading-[0.9]">
           From blank canvas to launch.
         </h2>
       </div>
@@ -48,7 +48,7 @@ export default function Process() {
             <span className="text-white/40 font-mono font-light text-xs tracking-widest">
               {n}
             </span>
-            <h3 className="text-white font-heading italic text-2xl leading-tight">
+            <h3 className="text-white font-heading font-medium tracking-tighter text-2xl leading-tight">
               {title}
             </h3>
             <p className="text-white/60 font-body font-light text-sm leading-relaxed">

@@ -7,7 +7,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        heading: ["'Instrument Serif'", "serif"],
+        heading: ["Inter", "sans-serif"],
         body: ["'Manrope'", "sans-serif"],
         mono: ["'JetBrains Mono'", "monospace"],
       },

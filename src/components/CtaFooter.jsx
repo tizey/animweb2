@@ -12,7 +12,7 @@ export default function CtaFooter() {
           delay={100}
           animateBy="words"
           direction="bottom"
-          className="text-5xl md:text-6xl lg:text-7xl font-heading italic text-white leading-[0.85] max-w-3xl"
+          className="text-5xl md:text-6xl lg:text-7xl font-heading font-medium tracking-tighter text-white leading-[0.85] max-w-3xl"
         />
 
         <motion.p

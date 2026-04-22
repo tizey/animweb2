@@ -29,7 +29,7 @@ export default function Testimonials() {
         <div className="liquid-glass rounded-full px-3.5 py-1 text-xs font-medium text-white font-mono">
           What They Say
         </div>
-        <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading italic text-white tracking-tight leading-[0.9]">
+        <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-medium tracking-tighter text-white tracking-tight leading-[0.9]">
           Don't take our word for it.
         </h2>
       </div>

@@ -32,7 +32,7 @@ export default function FeaturesGrid() {
         <div className="liquid-glass rounded-full px-3.5 py-1 text-xs font-medium text-white font-mono">
           Why Us
         </div>
-        <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading italic text-white tracking-tight leading-[0.9]">
+        <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-medium tracking-tighter text-white tracking-tight leading-[0.9]">
           The difference is everything.
         </h2>
       </div>

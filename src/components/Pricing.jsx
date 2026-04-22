@@ -52,7 +52,7 @@ export default function Pricing() {
         <div className="liquid-glass rounded-full px-3.5 py-1 text-xs font-medium text-white font-mono">
           Pricing
         </div>
-        <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading italic text-white tracking-tight leading-[0.9]">
+        <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-medium tracking-tighter text-white tracking-tight leading-[0.9]">
           Simple. Transparent. Fair.
         </h2>
       </div>
@@ -73,7 +73,7 @@ export default function Pricing() {
               <span className="text-white/50 font-mono font-light text-xs tracking-widest uppercase">
                 {name}
               </span>
-              <span className="text-white font-heading italic text-5xl leading-none">
+              <span className="text-white font-heading font-medium tracking-tighter text-5xl leading-none">
                 {price}
               </span>
               <p className="text-white/60 font-body font-light text-sm leading-relaxed">

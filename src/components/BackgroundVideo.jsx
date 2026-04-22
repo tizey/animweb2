@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 
 const VIDEO_URL =
-  "https://d8j0ntlcm91z4.cloudfront.net/user_39FK6IjsEkKkF7he27tKyECcTHY/hf_20260421_203849_5c26dfcd-5c84-4fa0-8f01-a23c36579673.mp4";
+  "https://d8j0ntlcm91z4.cloudfront.net/user_39FK6IjsEkKkF7he27tKyECcTHY/hf_20260421_210725_01773b62-36bd-4fdb-8a0f-a8851258aeec.mp4";
 
 // Higher = more frames extracted = smoother scrub, but longer load time
 const EXTRACT_FPS = 24;

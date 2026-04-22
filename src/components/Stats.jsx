@@ -21,7 +21,7 @@ export default function Stats() {
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-10 text-center">
           {stats.map(({ value, label }, i) => (
             <div key={i} className="flex flex-col gap-2">
-              <span className="text-4xl md:text-5xl lg:text-6xl font-heading italic text-white">
+              <span className="text-4xl md:text-5xl lg:text-6xl font-heading font-medium tracking-tighter text-white">
                 {value}
               </span>
               <span className="text-white/60 font-body font-light text-sm">

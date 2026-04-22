@@ -1,26 +1,24 @@
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Sun, BatteryCharging } from "lucide-react";
 import { motion } from "motion/react";
-import feature1 from "../assets/feature-1.gif";
-import feature2 from "../assets/feature-2.gif";
 
 const rows = [
   {
     title: "Designed to convert. Built to perform.",
     body: "Every pixel is intentional. Our AI studies what works across thousands of top sites—then builds yours to outperform them all.",
     cta: "Learn more",
-    gif: feature1,
+    Icon: Sun,
     reverse: false,
   },
   {
     title: "It gets smarter. Automatically.",
     body: "Your site evolves on its own. AI monitors every click, scroll, and conversion—then optimizes in real time. No manual updates. Ever.",
     cta: "See how it works",
-    gif: feature2,
+    Icon: BatteryCharging,
     reverse: true,
   },
 ];
 
-function FeatureRow({ title, body, cta, gif, reverse }) {
+function FeatureRow({ title, body, cta, Icon, reverse }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 40 }}
@@ -31,7 +29,7 @@ function FeatureRow({ title, body, cta, gif, reverse }) {
     >
       {/* Text */}
       <div className="flex-1 flex flex-col gap-5">
-        <h3 className="text-3xl md:text-4xl font-heading italic text-white leading-[0.95] tracking-tight">
+        <h3 className="text-3xl md:text-4xl font-heading font-medium tracking-tighter text-white leading-[0.95] tracking-tight">
           {title}
         </h3>
         <p className="text-white/60 font-body font-light text-sm md:text-base leading-relaxed">
@@ -42,14 +40,30 @@ function FeatureRow({ title, body, cta, gif, reverse }) {
         </button>
       </div>
 
-      {/* GIF */}
+      {/* Icon in matte glass frame */}
       <div className="flex-1 w-full">
-        <div className="liquid-glass rounded-2xl overflow-hidden">
-          <img
-            src={gif}
-            alt={title}
-            className="w-full h-auto object-cover block"
-          />
+        <div className="matte-glass rounded-3xl aspect-[4/3] flex items-center justify-center">
+          <motion.div
+            initial={{ scale: 0.7, opacity: 0, rotate: -12 }}
+            whileInView={{ scale: 1, opacity: 1, rotate: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            className="matte-glass rounded-2xl w-28 h-28 flex items-center justify-center"
+          >
+            <motion.div
+              animate={{
+                y: [0, -6, 0],
+                rotate: [0, 4, 0, -4, 0],
+              }}
+              transition={{
+                duration: 4,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+            >
+              <Icon className="w-12 h-12 text-white" strokeWidth={1.25} />
+            </motion.div>
+          </motion.div>
         </div>
       </div>
     </motion.div>
@@ -64,7 +78,7 @@ export default function FeaturesChess() {
         <div className="liquid-glass rounded-full px-3.5 py-1 text-xs font-medium text-white font-mono">
           Capabilities
         </div>
-        <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading italic text-white tracking-tight leading-[0.9]">
+        <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-medium tracking-tighter text-white tracking-tight leading-[0.9]">
           Pro features. Zero complexity.
         </h2>
       </div>
