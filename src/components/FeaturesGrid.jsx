@@ -48,7 +48,7 @@ export default function FeaturesGrid() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-60px" }}
             transition={{ duration: 0.6, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="liquid-glass rounded-2xl p-6 flex flex-col gap-4"
+            className="liquid-glass rounded-[8px] p-6 flex flex-col gap-4"
           >
             <div className="liquid-glass-strong rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0">
               <Icon className="w-5 h-5 text-white" />

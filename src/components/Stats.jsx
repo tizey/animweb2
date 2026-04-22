@@ -16,7 +16,7 @@ export default function Stats() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-        className="liquid-glass rounded-3xl p-12 md:p-16 max-w-5xl mx-auto"
+        className="liquid-glass rounded-[8px] p-12 md:p-16 max-w-5xl mx-auto"
       >
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-10 text-center">
           {stats.map(({ value, label }, i) => (

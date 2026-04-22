@@ -1,43 +1,43 @@
 import { motion } from "motion/react";
 import { Plus } from "lucide-react";
+import avatarImg from "../assets/avatar.jpg";
 
 const STARS = "★★★★★";
 
-const WHITE_CARD = {
-  background: "rgba(255,255,255,0.92)",
-  backdropFilter: "blur(40px) saturate(160%)",
-  WebkitBackdropFilter: "blur(40px) saturate(160%)",
-  boxShadow: "0 8px 32px rgba(0,0,0,0.12), inset 0 1px 0 rgba(255,255,255,1)",
-  border: "1px solid rgba(0,0,0,0.07)",
+const GLASS_CARD = {
+  background: "rgba(255,255,255,0.15)",
+  backdropFilter: "blur(10px) saturate(140%)",
+  WebkitBackdropFilter: "blur(10px) saturate(140%)",
+  boxShadow: "inset 0 1px 0 rgba(255,255,255,0.18)",
+  border: "1px solid rgba(255,255,255,0.2)",
 };
 
-// Placeholder avatar — simple initials circle
-function Avatar({ name, color = "#e0e0e0" }) {
-  const initials = name.split(" ").map((w) => w[0]).join("").slice(0, 2);
+function Avatar({ name }) {
   return (
-    <div
-      className="w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0 text-xs font-mono font-medium text-black/60"
-      style={{ background: color }}
-    >
-      {initials}
-    </div>
+    <img
+      src={avatarImg}
+      alt={name}
+      className="w-9 h-9 rounded-full object-cover flex-shrink-0"
+    />
   );
 }
 
 function Card({ children, className = "", style = {} }) {
   return (
-    <div className={`rounded-2xl p-5 ${className}`} style={{ ...WHITE_CARD, ...style }}>
+    <div className={`rounded-[8px] p-5 ${className}`} style={{ ...GLASS_CARD, ...style }}>
       {children}
     </div>
   );
 }
 
-// Small avatar stack for the rating card
-const STACK_COLORS = ["#f5c5a3", "#b5d5f5", "#c5e5c5", "#e5c5e5", "#f5e5a3"];
+const STACK_COLORS = [
+  "rgba(245,197,163,0.4)", "rgba(181,213,245,0.4)",
+  "rgba(197,229,197,0.4)", "rgba(229,197,229,0.4)", "rgba(245,229,163,0.4)",
+];
 
 export default function Testimonials() {
   return (
-    <section className="py-36 px-8 lg:px-16 max-w-7xl mx-auto">
+    <section className="py-72 px-8 lg:px-16 max-w-7xl mx-auto">
       {/* Header */}
       <motion.div
         initial={{ opacity: 0, y: 24 }}
@@ -72,58 +72,59 @@ export default function Testimonials() {
           transition={{ duration: 0.6, delay: 0, ease: [0.16, 1, 0.3, 1] }}
         >
           <Card className="flex flex-col justify-between gap-6 h-full" style={{ minHeight: 460 }}>
-            {/* Top: rating */}
             <div className="flex items-start gap-3">
               <span
-                className="font-heading font-medium text-black"
+                className="font-heading font-medium text-white"
                 style={{ fontSize: "3.5rem", lineHeight: 1, letterSpacing: "-0.05em" }}
               >
                 4.9
               </span>
               <div className="flex flex-col pt-1">
-                <span className="text-[10px] font-mono text-black/40 leading-snug">
-                  /5
-                </span>
-                <p className="text-black/50 font-body text-xs leading-snug mt-1 max-w-[120px]">
-                  We've delivered <strong className="text-black/70">56+ projects</strong> that help companies generate real results.
+                <span className="text-[10px] font-mono text-white/40 leading-snug">/5</span>
+                <p className="text-white/50 font-body text-xs leading-snug mt-1 max-w-[120px]">
+                  We've delivered <strong className="text-white/80">56+ projects</strong> that help companies generate real results.
                 </p>
               </div>
             </div>
 
-            {/* Bottom */}
             <div className="flex flex-col gap-4">
-              <div className="h-px bg-black/08" style={{ background: "rgba(0,0,0,0.08)" }} />
-              <span className="font-mono text-sm font-medium text-black">SolarEnergy®</span>
-              {/* Avatar stack */}
-              <div className="flex items-center gap-2">
+              <div className="h-px" style={{ background: "rgba(255,255,255,0.1)" }} />
+              <span className="font-mono text-sm font-medium text-white">SolarEnergy®</span>
+              <div className="flex items-center gap-16">
                 <div className="flex -space-x-2">
-                  {STACK_COLORS.map((c, i) => (
-                    <div
+                  {Array.from({ length: 4 }).map((_, i) => (
+                    <img
                       key={i}
-                      className="w-7 h-7 rounded-full border-2 border-white"
-                      style={{ background: c, zIndex: 5 - i }}
+                      src={avatarImg}
+                      alt=""
+                      className="w-7 h-7 border-2 object-cover aspect-square"
+                      style={{
+                        borderRadius: "9999px",
+                        borderColor: "rgba(255,255,255,0.15)",
+                        zIndex: i + 1,
+                      }}
                     />
                   ))}
                   <div
-                    className="w-7 h-7 rounded-full border-2 border-white flex items-center justify-center text-[9px] font-mono font-medium text-black/60"
-                    style={{ background: "#e8e8e8", zIndex: 0 }}
+                    className="w-7 h-7 rounded-full border-2 flex items-center justify-center text-[9px] font-mono font-medium text-black aspect-square"
+                    style={{ background: "#fff", borderColor: "rgba(255,255,255,0.15)", zIndex: 10 }}
                   >
                     56+
                   </div>
                 </div>
                 <div className="flex flex-col">
-                  <span className="text-black text-xs">★★★★★</span>
-                  <span className="text-black/40 font-mono text-[10px]">Trusted by clients worldwide</span>
+                  <span className="text-white text-xs">★★★★★</span>
+                  <span className="text-white/40 font-mono text-[10px]">Trusted by clients worldwide</span>
                 </div>
               </div>
-              <button className="w-full bg-black text-white rounded-full py-3 font-mono font-medium text-sm hover:opacity-80 transition-opacity">
+              <button className="w-full bg-white text-black rounded-full py-3 font-mono font-medium text-sm hover:opacity-80 transition-opacity">
                 Leave a review
               </button>
             </div>
           </Card>
         </motion.div>
 
-        {/* Col 2 — two stacked cards */}
+        {/* Col 2 */}
         <motion.div
           className="flex flex-col gap-2 h-full"
           initial={{ opacity: 0, y: 24 }}
@@ -131,25 +132,23 @@ export default function Testimonials() {
           viewport={{ once: true, margin: "-40px" }}
           transition={{ duration: 0.6, delay: 0.08, ease: [0.16, 1, 0.3, 1] }}
         >
-          {/* Top: author header only */}
           <Card>
             <div className="flex items-center justify-between mb-3">
               <div className="flex items-center gap-2.5">
-                <Avatar name="James Carter" color="#f0d0b0" />
+                <Avatar name="James Carter" color="rgba(240,208,176,0.35)" />
                 <div>
-                  <p className="text-black font-mono font-medium text-sm leading-tight">James Carter</p>
-                  <p className="text-black/40 font-mono text-xs">Wilson &amp; Co</p>
+                  <p className="text-white font-mono font-medium text-sm leading-tight">James Carter</p>
+                  <p className="text-white/40 font-mono text-xs">Wilson &amp; Co</p>
                 </div>
               </div>
-              <Plus className="w-4 h-4 text-black/20" />
+              <Plus className="w-4 h-4 text-white/20" />
             </div>
-            <span className="text-black text-sm">{STARS}</span>
+            <span className="text-white text-sm">{STARS}</span>
           </Card>
 
-          {/* Bottom: quote — grows to fill remaining height */}
           <Card className="flex-1 flex items-end" style={{ minHeight: 200 }}>
             <p
-              className="font-heading font-medium text-black"
+              className="font-heading font-medium text-white"
               style={{ fontSize: "1.35rem", lineHeight: 1.15, letterSpacing: "-0.04em" }}
             >
               Incredible team! They delivered exactly what we needed, on time and beyond expectations.
@@ -157,7 +156,7 @@ export default function Testimonials() {
           </Card>
         </motion.div>
 
-        {/* Col 3 — two stacked cards */}
+        {/* Col 3 */}
         <motion.div
           className="flex flex-col gap-2 h-full"
           initial={{ opacity: 0, y: 24 }}
@@ -165,36 +164,34 @@ export default function Testimonials() {
           viewport={{ once: true, margin: "-40px" }}
           transition={{ duration: 0.6, delay: 0.16, ease: [0.16, 1, 0.3, 1] }}
         >
-          {/* Top: quote — grows to fill */}
           <Card className="flex-1 flex flex-col justify-between" style={{ minHeight: 200 }}>
             <div className="flex items-start justify-between gap-2 mb-3">
               <p
-                className="font-heading font-medium text-black"
+                className="font-heading font-medium text-white"
                 style={{ fontSize: "1.35rem", lineHeight: 1.15, letterSpacing: "-0.04em" }}
               >
                 A smooth process from start to finish. Highly professional team!
               </p>
-              <Plus className="w-4 h-4 text-black/20 flex-shrink-0 mt-1" />
+              <Plus className="w-4 h-4 text-white/20 flex-shrink-0 mt-1" />
             </div>
-            <span className="text-black text-sm">{STARS}</span>
+            <span className="text-white text-sm">{STARS}</span>
           </Card>
 
-          {/* Bottom: author */}
           <Card>
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2.5">
-                <Avatar name="Emily Davis" color="#c8e0c8" />
+                <Avatar name="Emily Davis" color="rgba(200,224,200,0.35)" />
                 <div>
-                  <p className="text-black font-mono font-medium text-sm leading-tight">Emily Davis</p>
-                  <p className="text-black/40 font-mono text-xs">StartUp Hub</p>
+                  <p className="text-white font-mono font-medium text-sm leading-tight">Emily Davis</p>
+                  <p className="text-white/40 font-mono text-xs">StartUp Hub</p>
                 </div>
               </div>
-              <span className="text-black text-sm">{STARS}</span>
+              <span className="text-white text-sm">{STARS}</span>
             </div>
           </Card>
         </motion.div>
 
-        {/* Col 4 — two stacked cards */}
+        {/* Col 4 */}
         <motion.div
           className="flex flex-col gap-2 h-full"
           initial={{ opacity: 0, y: 24 }}
@@ -202,25 +199,23 @@ export default function Testimonials() {
           viewport={{ once: true, margin: "-40px" }}
           transition={{ duration: 0.6, delay: 0.24, ease: [0.16, 1, 0.3, 1] }}
         >
-          {/* Top: author header only */}
           <Card>
             <div className="flex items-center justify-between mb-3">
               <div className="flex items-center gap-2.5">
-                <Avatar name="Anna Martinez" color="#f0c8d8" />
+                <Avatar name="Anna Martinez" color="rgba(240,200,216,0.35)" />
                 <div>
-                  <p className="text-black font-mono font-medium text-sm leading-tight">Anna Martinez</p>
-                  <p className="text-black/40 font-mono text-xs">Marketing Director</p>
+                  <p className="text-white font-mono font-medium text-sm leading-tight">Anna Martinez</p>
+                  <p className="text-white/40 font-mono text-xs">Marketing Director</p>
                 </div>
               </div>
-              <Plus className="w-4 h-4 text-black/20" />
+              <Plus className="w-4 h-4 text-white/20" />
             </div>
-            <span className="text-black text-sm">{STARS}</span>
+            <span className="text-white text-sm">{STARS}</span>
           </Card>
 
-          {/* Bottom: quote — grows to fill remaining height */}
           <Card className="flex-1 flex items-end" style={{ minHeight: 200 }}>
             <p
-              className="font-heading font-medium text-black"
+              className="font-heading font-medium text-white"
               style={{ fontSize: "1.35rem", lineHeight: 1.15, letterSpacing: "-0.04em" }}
             >
               Our new branding is exactly what we envisioned—clean, modern, and unique. #1 in our industry.

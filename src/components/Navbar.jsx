@@ -16,8 +16,8 @@ export default function Navbar() {
       <div
         className="hidden md:flex items-center rounded-lg px-1.5 py-1 gap-0.5 border"
         style={{
-          backdropFilter: "blur(80px)",
-          WebkitBackdropFilter: "blur(80px)",
+          backdropFilter: "blur(20px)",
+          WebkitBackdropFilter: "blur(20px)",
           borderColor: "rgba(255,255,255,0.3)",
           background: "rgba(255,255,255,0.01)",
         }}

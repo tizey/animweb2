@@ -41,10 +41,10 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30, filter: "blur(12px)" }}
           animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           transition={{ duration: 0.8, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
-          className="matte-glass rounded-3xl p-5 flex items-center gap-5 max-w-xl"
+          className="matte-glass rounded-[8px] p-5 flex items-center gap-5 max-w-xl"
         >
           {/* Product image */}
-          <div className="relative flex-shrink-0 w-32 h-32 bg-black rounded-2xl overflow-hidden flex items-center justify-center">
+          <div className="relative flex-shrink-0 w-32 h-32 bg-black rounded-[8px] overflow-hidden flex items-center justify-center">
             <span className="absolute top-2 left-2 bg-white/90 text-black text-[10px] font-mono font-medium px-2 py-0.5 rounded-full z-10">
               Most Popular
             </span>

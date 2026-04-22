@@ -70,7 +70,7 @@ export default function Pricing() {
             transition={{ duration: 0.6, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
             className={`${
               highlight ? "liquid-glass-strong" : "liquid-glass"
-            } rounded-2xl p-8 flex flex-col gap-6`}
+            } rounded-[8px] p-8 flex flex-col gap-6`}
           >
             <div className="flex flex-col gap-2">
               <span className="text-white/50 font-mono font-light text-xs tracking-widest uppercase">

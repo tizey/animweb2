@@ -47,7 +47,7 @@ export default function Process() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-60px" }}
             transition={{ duration: 0.6, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="liquid-glass rounded-2xl p-6 flex flex-col gap-4"
+            className="liquid-glass rounded-[8px] p-6 flex flex-col gap-4"
           >
             <span className="text-white/40 font-mono font-light text-xs tracking-widest">
               {n}

@@ -42,13 +42,13 @@ function FeatureRow({ title, body, cta, Icon, reverse }) {
 
       {/* Icon in matte glass frame */}
       <div className="flex-1 w-full">
-        <div className="matte-glass rounded-3xl aspect-[4/3] flex items-center justify-center">
+        <div className="matte-glass rounded-[8px] aspect-[4/3] flex items-center justify-center">
           <motion.div
             initial={{ scale: 0.7, opacity: 0, rotate: -12 }}
             whileInView={{ scale: 1, opacity: 1, rotate: 0 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="matte-glass rounded-2xl w-28 h-28 flex items-center justify-center"
+            className="matte-glass rounded-[8px] w-28 h-28 flex items-center justify-center"
           >
             <motion.div
               animate={{

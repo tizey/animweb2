@@ -15,6 +15,7 @@ const steps = [
       "No commitment required",
     ],
     cta: "Book a Call",
+    image: "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_39FK6IjsEkKkF7he27tKyECcTHY%2Fhf_20260422_212313_e7bdd35e-2be2-448a-aef9-b4121eb730e1.png&w=1920&q=85",
   },
   {
     badge: "Step 02",
@@ -29,6 +30,7 @@ const steps = [
     ],
     cta: "See Examples",
     featured: true,
+    image: "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_39FK6IjsEkKkF7he27tKyECcTHY%2Fhf_20260422_211741_5477f313-7e1a-419f-b3b9-ba70472a744e.png&w=1920&q=85",
   },
   {
     badge: "Step 03",
@@ -42,12 +44,13 @@ const steps = [
       "30-day post-launch support",
     ],
     cta: "Get Started",
+    image: "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_39FK6IjsEkKkF7he27tKyECcTHY%2Fhf_20260422_212421_ff8b71f2-09d2-40d0-8a94-588a94166630.png&w=1920&q=85",
   },
 ];
 
 export default function StartSection() {
   return (
-    <section id="services" className="py-24 px-8 lg:px-16 max-w-7xl mx-auto">
+    <section id="services" className="py-48 px-8 lg:px-16 max-w-7xl mx-auto">
       {/* Header */}
       <div className="flex flex-col items-center text-center mb-16 gap-4">
         <div className="flex items-center gap-2 text-white font-mono text-sm">
@@ -68,38 +71,44 @@ export default function StartSection() {
       </div>
 
       {/* Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {steps.map(({ badge, title, price, description, features, cta, featured }, i) => (
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:items-start">
+        {steps.map(({ badge, title, price, description, features, cta, featured, image }, i) => (
           <motion.div
             key={i}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: 30, scale: featured ? 1.03 : 1 }}
+            whileInView={{ opacity: 1, y: 0, scale: featured ? 1.03 : 1 }}
+            whileHover={{
+              y: -12,
+              scale: featured ? 1.05 : 1.02,
+              transition: { duration: 0.35, ease: [0.16, 1, 0.3, 1] },
+            }}
             viewport={{ once: true, margin: "-60px" }}
             transition={{ duration: 0.6, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className={`flex flex-col rounded-3xl overflow-hidden ${featured ? "ring-2 ring-white/40 scale-[1.03]" : ""}`}
+            className={`shimmer-card flex flex-col rounded-[8px] overflow-hidden ${featured ? "ring-2 ring-white/30" : "md:mt-[50px]"}`}
             style={{
-              background: "rgba(255,255,255,0.92)",
-              backdropFilter: "blur(40px) saturate(160%)",
-              WebkitBackdropFilter: "blur(40px) saturate(160%)",
+              background: featured ? "rgba(255,255,255,0.20)" : "rgba(255,255,255,0.14)",
+              backdropFilter: "blur(10px) saturate(140%)",
+              WebkitBackdropFilter: "blur(10px) saturate(140%)",
+              border: "1px solid rgba(255,255,255,0.18)",
               boxShadow: featured
-                ? "0 24px 80px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,1)"
-                : "0 16px 48px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,1)",
+                ? "inset 0 1px 0 rgba(255,255,255,0.2)"
+                : "inset 0 1px 0 rgba(255,255,255,0.12)",
             }}
           >
             {/* Photo placeholder */}
             <div className="w-full aspect-[4/3] overflow-hidden">
-              <img src={placeholderImg} alt="placeholder" className="w-full h-full object-cover" />
+              <img src={image || placeholderImg} alt="placeholder" className="w-full h-full object-cover" />
             </div>
 
             {/* Card body */}
             <div className="flex flex-col gap-5 p-6 flex-1">
               {/* Badge + price */}
               <div className="flex items-center justify-between">
-                <span className="text-[10px] font-mono font-medium tracking-widest uppercase text-black/40">
+                <span className="text-[10px] font-mono font-medium tracking-widest uppercase text-white/40">
                   {badge}
                 </span>
                 <span
-                  className="font-heading font-medium text-black/80"
+                  className="font-heading font-medium text-white/80"
                   style={{ fontSize: "1.5rem", lineHeight: 1, letterSpacing: "-0.04em" }}
                 >
                   {price}
@@ -108,25 +117,25 @@ export default function StartSection() {
 
               {/* Title */}
               <h3
-                className="font-heading font-medium text-black"
+                className="font-heading font-medium text-white"
                 style={{ fontSize: "1.75rem", lineHeight: 0.95, letterSpacing: "-0.05em" }}
               >
                 {title}
               </h3>
 
               {/* Description */}
-              <p className="text-black/60 font-body font-light text-sm leading-relaxed">
+              <p className="text-white/60 font-body font-light text-sm leading-relaxed">
                 {description}
               </p>
 
               {/* Divider */}
-              <div className="h-px bg-black/10" />
+              <div className="h-px bg-white/10" />
 
               {/* Features */}
               <ul className="flex flex-col gap-2.5 flex-1">
                 {features.map((f, j) => (
-                  <li key={j} className="flex items-center gap-2.5 text-sm text-black/70 font-body">
-                    <CircleCheck className="w-4 h-4 text-black/40 flex-shrink-0" />
+                  <li key={j} className="flex items-center gap-2.5 text-sm text-white/70 font-body">
+                    <CircleCheck className="w-4 h-4 text-white/40 flex-shrink-0" />
                     {f}
                   </li>
                 ))}
@@ -135,9 +144,9 @@ export default function StartSection() {
               {/* CTA */}
               <button
                 className={`mt-2 w-full rounded-full px-5 py-3 font-mono font-medium text-sm flex items-center justify-center gap-2 transition-opacity hover:opacity-80 ${
-                  featured ? "bg-black text-white" : "bg-black/8 text-black border border-black/10"
+                  featured ? "bg-white text-black" : "text-white border border-white/20"
                 }`}
-                style={!featured ? { background: "rgba(0,0,0,0.06)" } : {}}
+                style={!featured ? { background: "rgba(255,255,255,0.08)" } : {}}
               >
                 {cta} <ArrowUpRight className="w-4 h-4" />
               </button>

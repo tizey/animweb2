@@ -1,13 +1,17 @@
 import { useState, useCallback } from "react";
 import { Plus } from "lucide-react";
-import placeholderImg from "../assets/turbine-card.jpg";
+import img1 from "../assets/images_num_sec/1.jpg";
+import img2 from "../assets/images_num_sec/2.jpg";
+import img3 from "../assets/images_num_sec/3.jpg";
+import img4 from "../assets/images_num_sec/4.jpg";
+import img5 from "../assets/images_num_sec/5.jpg";
 
 const stats = [
-  { num: "001", value: "1.2B",   label: "homes without clean energy" },
-  { num: "002", value: "73%",    label: "CO₂ reduction with solar" },
-  { num: "003", value: "$4.5T",  label: "solar market size by 2030" },
-  { num: "004", value: "290GW",  label: "new capacity added in 2023" },
-  { num: "005", value: "40%",    label: "cost drop since 2019" },
+  { num: "001", value: "1.2B",   label: "homes without clean energy", img: img1 },
+  { num: "002", value: "73%",    label: "CO₂ reduction with solar",   img: img2 },
+  { num: "003", value: "$4.5T",  label: "solar market size by 2030",  img: img3 },
+  { num: "004", value: "290GW",  label: "new capacity added in 2023", img: img4 },
+  { num: "005", value: "40%",    label: "cost drop since 2019",       img: img5 },
 ];
 
 const isDesktop =
@@ -24,7 +28,7 @@ export default function StatsBar() {
 
   return (
     <section
-      className="py-24 px-8 lg:px-16 max-w-7xl mx-auto"
+      className="py-48 px-8 lg:px-16 max-w-7xl mx-auto"
       onMouseMove={isDesktop ? handleMouseMove : undefined}
     >
       {/* Header */}
@@ -101,7 +105,7 @@ export default function StatsBar() {
           }}
         >
           <img
-            src={placeholderImg}
+            src={stats[hovered].img}
             alt=""
             className="w-full h-full object-cover"
           />
