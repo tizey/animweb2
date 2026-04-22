@@ -1,4 +1,4 @@
-import { ArrowUpRight, CircleCheck } from "lucide-react";
+import { ArrowUpRight, CircleCheck, Plus } from "lucide-react";
 import { motion } from "motion/react";
 import placeholderImg from "../assets/turbine-card.jpg";
 
@@ -50,7 +50,10 @@ export default function StartSection() {
     <section id="services" className="py-24 px-8 lg:px-16 max-w-7xl mx-auto">
       {/* Header */}
       <div className="flex flex-col items-center text-center mb-16 gap-4">
-        <div className="liquid-glass rounded-full px-3.5 py-1 text-xs font-medium text-white font-mono">
+        <div className="flex items-center gap-2 text-white font-mono text-sm">
+          <span className="inline-flex items-center justify-center w-5 h-5 bg-white/15 rounded-sm">
+            <Plus className="w-3 h-3" />
+          </span>
           How It Works
         </div>
         <h2

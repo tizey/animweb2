@@ -27,7 +27,7 @@ export default function Hero() {
         animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
         transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
         className="mt-10 font-heading font-medium text-white max-w-[95%]"
-        style={{ fontSize: "128px", lineHeight: "0.9", letterSpacing: "-0.08em" }}
+        style={{ fontSize: "clamp(3rem, 9vw, 128px)", lineHeight: "0.9", letterSpacing: "-0.08em" }}
       >
         Clean Energy <br />
         Solar Panels for <br />

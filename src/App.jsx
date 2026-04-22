@@ -1,4 +1,6 @@
 import BackgroundVideo from "./components/BackgroundVideo";
+import CustomCursor from "./components/CustomCursor";
+import StatsBar from "./components/StatsBar";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import BlurHero from "./components/BlurHero";
@@ -15,6 +17,7 @@ import CtaFooter from "./components/CtaFooter";
 export default function App() {
   return (
     <div className="min-h-screen">
+      <CustomCursor />
       {/* Global scroll-driven video background */}
       <BackgroundVideo />
 
@@ -24,12 +27,13 @@ export default function App() {
         <Hero />
         <BlurHero />
         <StartSection />
+        <Testimonials />
+        <StatsBar />
         <FeaturesChess />
         <FeaturesGrid />
         <Stats />
         <Process />
         <Pricing />
-        <Testimonials />
         <Faq />
         <CtaFooter />
       </div>

@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Custom cursor — hide default on desktop */
+@media (pointer: fine) {
+  *, *::before, *::after { cursor: none !important; }
+}
+
 :root {
   --background: 213 45% 67%;
   --foreground: 0 0% 100%;
