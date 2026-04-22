@@ -8,8 +8,8 @@ export default {
     extend: {
       fontFamily: {
         heading: ["Inter", "sans-serif"],
-        body: ["'Manrope'", "sans-serif"],
-        mono: ["'JetBrains Mono'", "monospace"],
+        body: ["Inter", "sans-serif"],
+        mono: ["Inter", "sans-serif"],
       },
       colors: {
         background: "hsl(var(--background))",
