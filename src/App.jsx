@@ -1,6 +1,7 @@
 import BackgroundVideo from "./components/BackgroundVideo";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
+import BlurHero from "./components/BlurHero";
 import StartSection from "./components/StartSection";
 import FeaturesChess from "./components/FeaturesChess";
 import FeaturesGrid from "./components/FeaturesGrid";
@@ -21,6 +22,7 @@ export default function App() {
       <div className="relative" style={{ zIndex: 2 }}>
         <Navbar />
         <Hero />
+        <BlurHero />
         <StartSection />
         <FeaturesChess />
         <FeaturesGrid />
